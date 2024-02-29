@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg menu mb-5">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#"><img src="/imagenes/factura.png" alt="logo" width="45px"></a>
+    <a class="navbar-brand text-white" href="{{route('inicio')}}"><i class="fa-solid fa-clipboard"></i>Facturación Electrónica</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,7 +25,7 @@
           <a class="nav-link text-white" href="">Historial. Tokens</a>
         </li>
         <li class="nav-item ms-3">
-          <a class="nav-link text-white" href="">Historial. Emisor</a>
+          <a class="nav-link text-white" href="{{route('emisor')}}">Historial. Emisor</a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link text-white" href="">Historial. Receptor</a>
