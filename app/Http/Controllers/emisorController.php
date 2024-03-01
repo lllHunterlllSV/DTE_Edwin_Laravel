@@ -31,54 +31,65 @@ class emisorController extends Controller
 
     public function agregarEmisor(Request $request){
 
-         $datos = array(
-            'id'=>'=FILA()-1',
-            'nombre'=>$request->name,
-            'nombrecomercial'=>$request->comercial,
-            'actividad'=>$request->actividad,
-            'nit'=>$request->nit,
-            'nrc'=>$request->nrc,
-            'departamento'=>$request->departamento,
-            'municipio'=>$request->municipio,
-            'complemento'=>$request->complemento,
-            'telefono'=>$request->phone,
-            'correo'=>$request->email,
-        );
-        $apiUrl = 'https://sheet.best/api/sheets/7ac9351f-0008-4a41-8f2a-699c146bea9e/tabs/emisor';
-
         // Configuración de la solicitud cURL
+        $apiUrl = 'https://sheet.best/api/sheets/7ac9351f-0008-4a41-8f2a-699c146bea9e/tabs/emisor';
+    
+        // Obtener los datos actuales de la hoja de cálculo
         $ch = curl_init($apiUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+    
+        // Procesar la respuesta
+        $data = json_decode($response, true);
+    
 
-        // Configurar opciones cURL
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Devolver el resultado en lugar de imprimirlo directamente
+        if(!empty($data)){
+        // Obtener el último ID utilizado
+        $ultimoID = end($data)['id'];
+        }
+        else{
+            $ultimoID =0;
+        }
+        // Incrementar el ID para el nuevo emisor
+        $nuevoID = $ultimoID + 1;
+    
+        // Construir los datos del nuevo emisor
+        $datos = array(
+            'id' => $nuevoID,
+            'nombre' => $request->name,
+            'nombrecomercial' => $request->comercial,
+            'actividad' => $request->actividad,
+            'nit' => $request->nit,
+            'nrc' => $request->nrc,
+            'departamento' => $request->departamento,
+            'municipio' => $request->municipio,
+            'complemento' => $request->complemento,
+            'telefono' => $request->phone,
+            'correo' => $request->email,
+        );
+    
+        // Configurar la solicitud cURL para agregar el nuevo emisor
+        $ch = curl_init($apiUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json',
         ));
-
-        // Si estás enviando datos
-        curl_setopt($ch, CURLOPT_POST, 1); // Método POST
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($datos)); // Datos a enviar en formato JSON
-        
-
-        // Ejecutar la solicitud cURL
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($datos));
         $response = curl_exec($ch);
-
-        // Verificar errores
-        if (curl_errno($ch)) {
-            die('Error cURL: ' . curl_error($ch));
-        }
-
-        // Cerrar la conexión cURL
         curl_close($ch);
-
+    
         // Procesar la respuesta
         $data = json_decode($response, true);
-
-        // Hacer algo con los datos obtenidos
-        //print_r($data);
     
+        // Hacer algo con los datos obtenidos
+        // print_r($data);
+    
+        // Cargar los datos actualizados
         return $this->cargarDatos();
     }
+    
 
     public function modificar_emisor(Request $request){
         $datos = array(

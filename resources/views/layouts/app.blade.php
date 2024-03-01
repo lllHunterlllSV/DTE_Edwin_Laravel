@@ -28,7 +28,7 @@
           <a class="nav-link text-white" href="{{route('emisor')}}">Historial. Emisor</a>
         </li>
         <li class="nav-item ms-3">
-          <a class="nav-link text-white" href="">Historial. Receptor</a>
+          <a class="nav-link text-white" href="{{route('receptor')}}">Historial. Receptor</a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link text-white" href="">Historial. DTE</a>

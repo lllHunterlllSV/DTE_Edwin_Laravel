@@ -23,3 +23,8 @@ Route::get('/emisor',[App\Http\Controllers\EmisorController::class, 'cargarDatos
 Route::post('/agregaremisor',[App\Http\Controllers\EmisorController::class, 'agregarEmisor'])->name('agregaremisor');
 Route::post('/modificaremisor',[App\Http\Controllers\EmisorController::class, 'modificar_emisor'])->name('modificaremisor');
 Route::post('/eliminaremisor',[App\Http\Controllers\EmisorController::class, 'eliminar_emisor'])->name('eliminaremisor');
+
+Route::get('/receptor',[App\Http\Controllers\ReceptorController::class, 'cargarDatos'])->name('receptor');
+Route::post('/agregarreceptor',[App\Http\Controllers\ReceptorController::class, 'agregarReceptor'])->name('agregarreceptor');
+Route::post('/modificarreceptor',[App\Http\Controllers\ReceptorController::class, 'modificar_receptor'])->name('modificarreceptor');
+Route::post('/eliminarreceptor',[App\Http\Controllers\ReceptorController::class, 'eliminar_receptor'])->name('eliminarreceptor');

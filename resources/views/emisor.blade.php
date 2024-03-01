@@ -42,7 +42,7 @@
                         @include('emisor_eliminar')
             
            @empty
-           
+           <th>No hay datos</th>
 
            @endforelse
           </tbody>
