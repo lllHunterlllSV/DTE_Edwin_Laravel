@@ -33,11 +33,13 @@
                             <th>{{$emisor['correo']}}</th>
                             <th>{{$emisor['telefono']}}</th>
                             <th>
-                            <input type="button" value="Modificar" data-bs-toggle="modal" data-bs-target="#modal_modificar{{ $emisor['telefono'] }}" class="btn btn-success">
-                            <input type="button" value="Eliminar" data-bs-toggle="modal" data-bs-target="#modal_eliminar{{ $emisor['telefono'] }}" class="btn btn-danger">
+                            <input type="button" value="Modificar" data-bs-toggle="modal" data-bs-target="#modal_modificar{{ $emisor['id'] }}" class="btn btn-success">
+                            <input type="button" value="Eliminar" data-bs-toggle="modal" data-bs-target="#modal_eliminar{{ $emisor['id'] }}" class="btn btn-danger">
                             </th>
                             
                         </tr>
+                        @include('emisor_modificar')
+                        @include('emisor_eliminar')
             
            @empty
            

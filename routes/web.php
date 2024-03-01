@@ -21,3 +21,5 @@ Route::get('/', function () {
 
 Route::get('/emisor',[App\Http\Controllers\EmisorController::class, 'cargarDatos'])->name('emisor');
 Route::post('/agregaremisor',[App\Http\Controllers\EmisorController::class, 'agregarEmisor'])->name('agregaremisor');
+Route::post('/modificaremisor',[App\Http\Controllers\EmisorController::class, 'modificar_emisor'])->name('modificaremisor');
+Route::post('/eliminaremisor',[App\Http\Controllers\EmisorController::class, 'eliminar_emisor'])->name('eliminaremisor');
