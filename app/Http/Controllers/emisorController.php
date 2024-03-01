@@ -92,7 +92,7 @@ class emisorController extends Controller
             
         );
         
-        echo $request->idemisor;
+        
         $apiUrl = "https://sheet.best/api/sheets/7ac9351f-0008-4a41-8f2a-699c146bea9e/tabs/emisor/id/$request->idemisor";
         $response = Http::patch($apiUrl,$datos);
 
