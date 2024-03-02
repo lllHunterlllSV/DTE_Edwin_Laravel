@@ -37,8 +37,8 @@
                             <th>{{$receptor['municipio']}}</th>
                             <th>{{$receptor['complemento']}}</th>
                             <th>
-                            <input type="button" value="Modificar" data-bs-toggle="modal" data-bs-target="#modal_modificar{{ $receptor['id'] }}" class="btn btn-success">
-                            <input type="button" value="Eliminar" data-bs-toggle="modal" data-bs-target="#modal_eliminar{{ $receptor['id'] }}" class="btn btn-danger">
+                            <button value="Modificar" data-bs-toggle="modal" data-bs-target="#modal_modificar{{ $receptor['id'] }}" class="btn btn-success"><i class="fa-solid fa-pen"></i></button>
+                            <button value="Eliminar" data-bs-toggle="modal" data-bs-target="#modal_eliminar{{ $receptor['id'] }}" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                             </th>
                             
                         </tr>
