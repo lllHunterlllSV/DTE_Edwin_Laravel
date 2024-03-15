@@ -11,7 +11,7 @@ class receptorController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => 'https://sheet.best/api/sheets/7ac9351f-0008-4a41-8f2a-699c146bea9e/tabs/receptor',
+          CURLOPT_URL => 'https://sheetdb.io/api/v1/ckohkinmkc10t?sheet=receptor',
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => '',
           CURLOPT_MAXREDIRS => 10,
@@ -32,7 +32,7 @@ class receptorController extends Controller
     public function agregarReceptor(Request $request){
 
        // Configuración de la solicitud cURL
-    $apiUrl = 'https://sheet.best/api/sheets/7ac9351f-0008-4a41-8f2a-699c146bea9e/tabs/receptor';
+    $apiUrl = 'https://sheetdb.io/api/v1/ckohkinmkc10t?sheet=receptor';
 
     // Obtener los datos actuales de la hoja de cálculo
     $ch = curl_init($apiUrl);
@@ -101,7 +101,7 @@ class receptorController extends Controller
         );
         
         
-        $apiUrl = "https://sheet.best/api/sheets/7ac9351f-0008-4a41-8f2a-699c146bea9e/tabs/receptor/id/$request->idreceptor";
+        $apiUrl = "https://sheetdb.io/api/v1/ckohkinmkc10t/id/$request->idreceptor?sheet=receptor";
         $response = Http::patch($apiUrl,$datos);
 
         
@@ -114,7 +114,7 @@ class receptorController extends Controller
     public function eliminar_receptor(Request $request){
       
         
-        $apiUrl = "https://sheet.best/api/sheets/7ac9351f-0008-4a41-8f2a-699c146bea9e/tabs/receptor/id/$request->idreceptor";
+        $apiUrl = "https://sheetdb.io/api/v1/ckohkinmkc10t/id/$request->idreceptor?sheet=receptor";
         $response = Http::delete($apiUrl);
 
         

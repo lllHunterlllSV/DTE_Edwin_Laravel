@@ -539,6 +539,8 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\emisorController' => __DIR__ . '/../..' . '/app/Http/Controllers/emisorController.php',
+        'App\\Http\\Controllers\\receptorController' => __DIR__ . '/../..' . '/app/Http/Controllers/receptorController.php',
+        'App\\Http\\Controllers\\tokenController' => __DIR__ . '/../..' . '/app/Http/Controllers/tokenController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

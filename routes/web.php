@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
+Route::get('/token',[App\Http\Controllers\tokenController::class, 'cargarDatos'])->name('token');
+Route::post('/generartoken',[App\Http\Controllers\tokenController::class, 'generarToken'])->name('generartoken');
 
 
 Route::get('/emisor',[App\Http\Controllers\EmisorController::class, 'cargarDatos'])->name('emisor');

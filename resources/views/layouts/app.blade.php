@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav" id="listamenu">
         <li class="nav-item ms-3">
-          <a class="nav-link text-white" href="">Historial. Tokens</a>
+          <a class="nav-link text-white" href="{{route('token')}}">Historial. Tokens</a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link text-white" href="{{route('emisor')}}">Historial. Emisor</a>

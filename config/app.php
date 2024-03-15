@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
-
+   
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -15,7 +15,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-
+    
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/El_Salvador',
 
     /*
     |--------------------------------------------------------------------------

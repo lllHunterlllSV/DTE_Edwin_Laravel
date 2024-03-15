@@ -10,6 +10,8 @@ return array(
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\emisorController' => $baseDir . '/app/Http/Controllers/emisorController.php',
+    'App\\Http\\Controllers\\receptorController' => $baseDir . '/app/Http/Controllers/receptorController.php',
+    'App\\Http\\Controllers\\tokenController' => $baseDir . '/app/Http/Controllers/tokenController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
